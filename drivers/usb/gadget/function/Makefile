@@ -54,10 +54,7 @@ usb_f_dm-y			:= f_dm.o
 obj-$(CONFIG_USB_CONFIGFS_F_DM)	+= usb_f_dm.o
 usb_f_tcm-y			:= f_tcm.o
 obj-$(CONFIG_USB_F_TCM)		+= usb_f_tcm.o
-usb_f_accessory-y		:= f_accessory.o
-obj-$(CONFIG_USB_F_ACC)		+= usb_f_accessory.o
-usb_f_audio_source-y		:= f_audio_source.o
-obj-$(CONFIG_USB_F_AUDIO_SRC)	+= usb_f_audio_source.o
+ifneq ($(CONFIG_USB_ANDROID_SAMSUNG_MTP),y)
 usb_f_mtp-y                     := f_mtp.o
 obj-$(CONFIG_USB_CONFIGFS_UEVENT)         += usb_f_mtp.o
 usb_f_ptp-y                     := f_ptp.o
